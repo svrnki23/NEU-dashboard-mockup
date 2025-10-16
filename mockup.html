@@ -45,19 +45,51 @@
         </div>
 
         <div class="right">
-            <div class="box">
-                <h2>Nitrogen Flow Through the Pasture Animal Manure Pathway</h2>
-                <div class="flow">
-                    <div class="flow-item yellow">Forage Intake<br>190 g N/head/day</div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item orange">N Retention<br>60 g N/head/d<br><small>Muscle, milk</small></div>
-                    <div class="arrow">→</div>
-                    <div class="flow-item green">Manure N<br>130 g N/head/day</div>
+            <div class="flow-filter-wrapper">
+
+                <div class="box">
+                    <h2>Nitrogen Flow Through the Pasture Animal Manure Pathway</h2>
+                    <div class="flow">
+                        <div class="flow-item yellow">Forage Intake<br>190 g N/head/day</div>
+                        <div class="arrow">→</div>
+                        <div class="flow-item orange">N Retention<br>60 g N/head/d<br><small>Muscle, milk</small></div>
+                        <div class="arrow">→</div>
+                        <div class="flow-item green">Manure N<br>130 g N/head/day</div>
+                    </div>
+                    <div class="flow" style="margin-top:20px">
+                        <div class="flow-item blue">Manure N<br>130 g N/head/day</div>
+                        <div style="text-align:center; font-size:12px"><b>N Loss</b><br>NH₃ 10.0, Leaching</div>
+                    </div>
                 </div>
-                <div class="flow" style="margin-top:20px">
-                    <div class="flow-item blue">Manure N<br>130 g N/head/day</div>
-                    <div class="arrow">→</div>
-                    <div style="text-align:center;font-size:12px"><b>N Loss</b><br>NH₃ 10.0, Leaching</div>
+                <div class="box">
+                    <h2>Animal Metrics</h2>
+                    <div class="form-grid">
+                        <div class="input-group">
+                        <label for="num-animals">Number of Animals</label>
+                        <input type="number" id="num-animals" placeholder="250">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="avgDMI">Avg. Dry Matter Intake (kg)</label>
+                            <input type="text" id="avgDMI" placeholder="10">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="physio-state">Physiological State of Animals</label>
+                            <select id="physio-state">
+                                <option value=""> --Select Physiological State-- </option>
+                                <option value="">Growing</option>
+                                <option value="">Lactating</option>
+                                <option value="">Finishing</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="avg-weight">Avg. Animal Weight (kg)</label>
+                            <input type="number" id="avg-weight" placeholder="250">
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
