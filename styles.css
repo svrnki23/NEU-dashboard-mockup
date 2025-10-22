@@ -36,13 +36,13 @@ h2 { font-size: 18px; margin-bottom: 12px; }
 }
 
 .left{
-    flex-basis: 41.66%;
+    flex-basis: 33%;
     display: flex;
     flex-direction: column;
 }
 
 .right{
-    flex-basis: 58.33%;
+    flex-basis: 67%;
     display: flex;
     flex-direction: column;
 }
@@ -194,13 +194,14 @@ h2 { font-size: 18px; margin-bottom: 12px; }
 /* bar graph */
 .chart { 
     background: #f9f9f9; 
-    height: 180px; 
+    height: 160px; 
     border-radius: 8px; 
     display: flex;
     align-items: flex-end;
     gap: 10px;
     padding: 15px;
     position: relative;
+
 }
 
 /* bars styling */
@@ -213,7 +214,7 @@ h2 { font-size: 18px; margin-bottom: 12px; }
 /* line graph */
 .scatter {
     background: #f9f9f9;
-    height: 180px;
+    height: 150px;
     border-radius: 8px;
     position: relative;
 }
@@ -274,4 +275,29 @@ h2 { font-size: 18px; margin-bottom: 12px; }
     background: #3b82f6;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.chatbot-box .chatbot-content {
+    height: 85px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-top: 4px; 
+}
+
+.chatbot-content p {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+}
+
+.chatbot-content input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    font-size: 14px;
+    color: #333;
 }
