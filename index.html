@@ -11,10 +11,15 @@
     <p class="subtitle">Integrating Satellite Data, Sensor Streams, and Cattle Performance Metrics</p>
 
     <div class="filters">
-        <select><option>San Saba Ranch</option></select>
+        <select><option>Beef Center, College Station</option></select>
         <select><option>May 2024</option></select>
         <select><option>Semi-Arid</option></select>
-        <select><option>Agroecological Zone Semi-Arid</option></select>
+        <select>
+            <option> --Select Model-- </option>
+            <!-- placeholder for now to be replaced by the actual name of the models -->
+            <option>Model Name 1</option> 
+            <option>Model Name 2</option>
+        </select>
     </div>
 
     <div class="grid">
@@ -35,12 +40,10 @@
 
             <div class="box">
                 <h2>NUE Indicators</h2>
+                <!-- removed NUE, N losses, NDVI-based forage N -->
                 <div class="kpi">Nitrogen Intake <span>190 g N/head/day ↑</span></div>
                 <div class="kpi">N Retained <span>60 g N/head/day ↑</span></div>
-                <div class="kpi highlight">NUE <span>31.5% ↑</span></div>
                 <div class="kpi">N Excreted <span>130 g N/head/day ↓</span></div>
-                <div class="kpi">N Losses <span>15 g N eq/day ↔</span></div>
-                <div class="kpi">NDVI-based Forage N <span>2.1% ↑</span></div>
             </div>
         </div>
 
@@ -74,19 +77,8 @@
                             <input type="text" id="avgDMI" placeholder="10">
                         </div>
 
-                        <div class="input-group">
-                            <label for="physio-state">Physiological State of Animals</label>
-                            <select id="physio-state">
-                                <option value=""> --Select Physiological State-- </option>
-                                <option value="">Growing</option>
-                                <option value="">Lactating</option>
-                                <option value="">Finishing</option>
-                            </select>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="avg-weight">Avg. Animal Weight (kg)</label>
-                            <input type="number" id="avg-weight" placeholder="250">
+                        <div class="simulation-holder">
+                            <span>Simulation Placeholder</span>
                         </div>
 
                     </div>
@@ -134,11 +126,20 @@
 
             <div class="box">
                 <h2>Practice Impact Summary</h2>
-                <table>
-                    <tr><td>Legume Integration</td><td>+6%</td><td>H+</td><td><span class="badge">High</span></td></tr>
-                    <tr><td>Rotational Grazing</td><td>+5%</td><td>N+</td><td><span class="badge">Medium</span></td></tr>
-                    <tr><td>Additives</td><td>+3%</td><td>A</td><td><span class="badge">High</span></td></tr>
-                </table>
+                <div class="practice-sliders">
+                    <div class="slider-group">
+                        <label for="legume">Legume Integration</label>
+                        <input type="range" id="legume" min="0" max="100" value="60">
+                    </div>
+                    <div class="slider-group">
+                        <label for="grazing">Rotational Grazing</label>
+                        <input type="range" id="grazing" min="0" max="100" value="50">
+                    </div>
+                    <div class="slider-group">
+                        <label for="additives">Additives</label>
+                        <input type="range" id="additives" min="0" max="100" value="30">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
