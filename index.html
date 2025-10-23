@@ -16,15 +16,36 @@
         <select><option>Semi-Arid</option></select>
         <select>
             <option> --Select Model-- </option>
-            <!-- placeholder for now to be replaced by the actual name of the models -->
+            <!-- placeholder for the different models -->
             <option>Model Name 1</option> 
             <option>Model Name 2</option>
         </select>
     </div>
 
-    <div class="grid">
-        <div class="left">
+    <!-- Column 1 -->
+    <div class="main-grid">
+        <div class="column">
             <div class="box">
+                <!-- Line graph -->
+                <h2>Model Verification Module</h2>
+                <p class="box-subtitle">Geospatial vs. Modeled NUE</p>
+                <div class="scatter">
+                    <div class="dot" style="top:30%;left:25%"></div>
+                    <div class="dot" style="top:50%;left:35%"></div>
+                    <div class="dot" style="top:45%;left:45%"></div>
+                    <div class="dot" style="top:40%;left:55%"></div>
+                    <div class="dot" style="top:30%;left:65%"></div>
+                    <div class="dot" style="top:25%;left:75%"></div>
+                    <div class="dot" style="top:20%;left:85%"></div>
+                    <svg style="position:absolute;width:100%;height:100%">
+                        <line x1="10%" y1="85%" x2="90%" y2="15%" stroke="#3b82f6" stroke-width="2"/>
+                    </svg>
+                    <span class="label">F² = 0.92<br>RMSE 1.9%</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <!-- Heatmap -->
                 <h2>NUE Heatmap</h2>
                 <div class="map">
                     <div class="tooltip">
@@ -35,9 +56,48 @@
                         <b>NUE: 31.8%</b>
                     </div>
                 </div>
-                <div class="info">📍 Pasture s | NUE: 31.45</div>
+                <p class="caption">Geospatial model of Nitrogen Utilization Efficiency. 📍 Pasture s | NUE: 31.45</p>
             </div>
 
+            <div class="box">
+                <h2>Precision Animal Management</h2>
+                <div class="form-grid">
+                    <div class="input-group">
+                    <label for="num-animals">Number of Animals</label>
+                    <input type="number" id="num-animals" placeholder="50">
+                    </div>
+                    <div class="input-group">
+                        <label for="avgDMI">Avg. Dry Matter Intake (kg)</label>
+                        <input type="text" id="avgDMI" placeholder="10">
+                    </div>
+                </div>
+                <!-- <img src="sim-placeholder.png" alt="Cattle growth simulation" class="sim-image"> -->
+            </div>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div class="column">
+            <!-- Bar graph -->
+            <div class="box">
+                <h2>Monthly NUE Trends</h2>
+                <div class="chart">
+                    <div class="bar" style="height:50%"></div>
+                    <div class="bar" style="height:60%"></div>
+                    <div class="bar" style="height:75%"></div>
+                    <div class="bar" style="height:70%"></div>
+                    <div class="bar" style="height:85%"></div>
+                    <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none">
+                        <polyline points="30,126,90,116,180,90,250,105 330,50" fill="none" stroke="#3b82f6" stroke-width="3"/>
+                        <circle cx="30" cy="126" r="4" fill="#3b82f6"/>
+                        <circle cx="90" cy="116" r="4" fill="#3b82f6"/>
+                        <circle cx="180" cy="90" r="4" fill="#3b82f6"/>
+                        <circle cx="250" cy="105" r="4" fill="#3b82f6"/>
+                        <circle cx="330" cy="50" r="4" fill="#3b82f6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- NUE Indicators box -->
             <div class="box">
                 <h2>NUE Indicators</h2>
                 <div class="kpi-container"> 
@@ -46,10 +106,33 @@
                     <div class="kpi">N Excreted <span>130 g N/head/day</span></div>
                 </div>
             </div>
-            
+
             <div class="box">
-                <h2>Practice Impact Summary</h2>
+                <!-- Flow Pathway  -->
+                <h2>Nitrogen Flow (N in Excretion)</h2>
+                <div class="flow-content-wrapper">
+                    <div class="flow">
+                        <div class="flow-item yellow">Forage Intake<br>190 g N/head/day</div>
+                        <div class="arrow">→</div>
+                        <div class="flow-item orange">N Retention<br>60 g N/head/d</div>
+                        <div class="arrow">→</div>
+                        <div class="flow-item green">N in Excretion<br>130 g N/head/day</div>
+                    </div>
+                    <div class="flow" style="margin-top:15px">
+                        <div class="flow-item blue">N in Excretion<br>130 g N/head/day</div>
+                        <div style="text-align:center; font-size:12px"><b>N Loss</b><br>NH₃ 10.0, Leaching</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN 3 -->
+        <div class="column">
+            <!-- Changed name to future scenario testing -->
+            <div class="box">
+                <h2>Future Scenario Testing</h2>
                 <div class="practice-sliders">
+                    <!-- need to name number to sliders, just a slider at the moment -->
                     <div class="slider-group">
                         <label for="legume">Legume Integration</label>
                         <input type="range" id="legume" min="0" max="100" value="60">
@@ -65,6 +148,7 @@
                 </div>
             </div>
 
+            <!-- AI ChatBot -->
             <div class="box chatbot-box">
                 <h2>AI Assistant</h2>
                 <div class="chatbot-content">
@@ -72,82 +156,10 @@
                     <input type="text" placeholder="e.g., 'Why is pasture 15 high?'"/>
                 </div>
             </div>
-        </div>
-
-        <div class="right">
-            <div class="charts">
-                <div class="box">
-                    <h2>Model Verification Module</h2>
-                    <p style="color:#666; font-size:12px; margin:-10px 0 10px">Geospectal vs. Modeled NUE</p>
-                    <div class="scatter">
-                        <div class="dot" style="top:30%;left:25%"></div>
-                        <div class="dot" style="top:50%;left:35%"></div>
-                        <div class="dot" style="top:45%;left:45%"></div>
-                        <div class="dot" style="top:40%;left:55%"></div>
-                        <div class="dot" style="top:30%;left:65%"></div>
-                        <div class="dot" style="top:25%;left:75%"></div>
-                        <div class="dot" style="top:20%;left:85%"></div>
-                        <svg style="position:absolute;width:100%;height:100%">
-                            <line x1="10%" y1="85%" x2="90%" y2="15%" stroke="#3b82f6" stroke-width="2"/>
-                        </svg>
-                        <span class="label">F² = 0.92<br>RMSE 1.9%</span>
-                    </div>
-                </div>
-                
-                <div class="box">
-                    <h2>Monthly NUE and N Loss Trends</h2>
-                    <div class="chart">
-                        <div class="bar" style="height:50%"></div>
-                        <div class="bar" style="height:60%"></div>
-                        <div class="bar" style="height:75%"></div>
-                        <div class="bar" style="height:70%"></div>
-                        <div class="bar" style="height:85%"></div>
-                        <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none">
-                            <polyline points="30,140 80,130 130,90 180,85 230,50" fill="none" stroke="#3b82f6" stroke-width="3"/>
-                            <circle cx="30" cy="140" r="4" fill="#3b82f6"/>
-                            <circle cx="80" cy="130" r="4" fill="#3b82f6"/>
-                            <circle cx="130" cy="90" r="4" fill="#3b82f6"/>
-                            <circle cx="180" cy="85" r="4" fill="#3b82f6"/>
-                            <circle cx="230" cy="50" r="4" fill="#3b82f6"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flow-filter-wrapper">
-                <div class="box">
-                    <h2>Nitrogen Flow Through the Pasture Animal Manure Pathway</h2>
-                    <div class="flow">
-                        <div class="flow-item yellow">Forage Intake<br>190 g N/head/day</div>
-                        <div class="arrow">→</div>
-                        <div class="flow-item orange">N Retention<br>60 g N/head/d<br><small>Muscle, milk</small></div>
-                        <div class="arrow">→</div>
-                        <div class="flow-item green">Manure N<br>130 g N/head/day</div>
-                    </div>
-                    <div class="flow" style="margin-top:20px">
-                        <div class="flow-item blue">Manure N<br>130 g N/head/day</div>
-                        <div style="text-align:center; font-size:12px"><b>N Loss</b><br>NH₃ 10.0, Leaching</div>
-                    </div>
-                </div>
-                
-                <div class="box">
-                    <img src="sim-placeholder.png" alt="Cattle growth simulation graph" class="sim-image">
-                    <h2>Animal Metrics</h2>
-                    <div class="form-grid">
-                        <div class="input-group">
-                        <label for="num-animals">Number of Animals</label>
-                        <input type="number" id="num-animals" placeholder="50">
-                        </div>
-                        <div class="input-group">
-                            <label for="avgDMI">Avg. Dry Matter Intake (kg)</label>
-                            <input type="text" id="avgDMI" placeholder="10">
-                        </div>
-                
-                    </div>
-                </div>
-            </div>
+            
 
         </div>
+    </div>
     </div>
 </body>
 </html>

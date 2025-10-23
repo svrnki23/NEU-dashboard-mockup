@@ -5,319 +5,292 @@
 body { 
     font-family: Arial, sans-serif; 
     background: #f5f5f5; 
-    padding: 30px; 
+    padding: 20px; /* MODIFIED - Reduced page padding */
     color: #333; 
 }
 
-/* heading and title */
-h1 { font-size: 26px; margin-bottom: 5px; }
-h2 { font-size: 18px; margin-bottom: 12px; }
-.subtitle { color: #666; margin-bottom: 25px; font-size: 14px; }
+h1 { 
+    font-size: 24px; 
+    margin-bottom: 5px;
+ } 
 
-/* dropdown at the top of the page, more need to be added */
+h2 { 
+    font-size: 16px; 
+    margin-bottom: 10px; 
+} 
+
+.subtitle { color: #666; 
+    margin-bottom: 20px; 
+    font-size: 14px; 
+} /* MODIFIED - Less margin */
+
+/* Subtitle for boxes */
+.box-subtitle {
+    font-size: 12px;
+    color: #666;
+    margin-top: -8px;
+    margin-bottom: 8px; 
+}
+
+/* Caption for heatmap */
+.caption {
+    font-size: 11px; 
+    color: #666;
+    margin-top: 8px; 
+}
+
 .filters { 
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
     gap: 15px; 
-    margin-bottom: 25px; 
+    margin-bottom: 20px; 
+    max-width: 1300px; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .filters select { 
-    padding: 10px; 
+    padding: 8px; 
     border: 1px solid #ddd; 
     border-radius: 5px; 
     background: white; 
 }
 
-.grid { 
-    display: flex; 
-    grid-template-columns: 5fr 7fr; 
-    gap: 15px; 
+/* --- Main 3-Column Grid Layout --- */
+.main-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    gap: 20px; /* Tighter gaps */
+    max-width: 1300px; 
+    margin: 0 auto; /* Centers the grid on the page */
 }
 
-.left{
-    flex-basis: 33%;
+.column {
     display: flex;
     flex-direction: column;
+    gap: 15px; /* Tighter gaps */
 }
-
-.right{
-    flex-basis: 67%;
-    display: flex;
-    flex-direction: column;
-}
-
 
 .box { 
     background: white; 
-    padding: 10px; 
-    border-radius: 10px; 
-    margin-bottom: 15px; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    padding: 19px; /* Less padding */
+    border-radius: 8px; /* Smaller radius */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06); 
 }
 
-/* heatmap atlernative placeholder */
+/* --- Standardized Content Heights --- */
+.map, 
+.kpi-container,
+.practice-sliders,
+.chart, 
+.scatter,
+.chatbot-content{
+    height: 145px; /* Reduced standard height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Specific Box Styling --- */
+
+/* Col 1 */
+.scatter {
+    background: #f9f9f5;
+    border-radius: 8px;
+    position: relative;
+    justify-content: flex-start;
+}
 .map { 
     background: linear-gradient(135deg, #86efac, #fde047, #fb923c); 
-    height: 160px; 
-    border-radius: 10px; 
+    border-radius: 8px; /* MODIFIED */
     position: relative; 
-    margin-bottom: 10px; 
+}
+.form-grid{
+    display: grid;
+    gap: 10px; /* MODIFIED */
 }
 
+/* Col 2 */
+.chart { 
+    background: #f9f9f5; 
+    border-radius: 8px; 
+    display: flex;
+    flex-direction: row; /* This is for the bars */
+    align-items: flex-end;
+    gap: 10px;
+    padding: 10px; /* MODIFIED */
+    position: relative;
+}
+.kpi-container {
+    justify-content: space-around; /* Space out the 3 KPI items */
+}
+.flow-content-wrapper {
+    /* height: 180px; Reduced height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    gap: 12px;
+}
+
+/* Col 3 */
+.practice-sliders {
+    justify-content: space-around; /* Space out the 3 sliders */
+    padding-top: 10px;
+}
+.chatbot-content {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    gap: 10px; /* MODIFIED */
+}
+
+/* --- Component-Specific Styles --- */
+
+/* Tooltip (in map) */
 .tooltip { 
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
+    position: absolute; top: 50%; left: 50%; 
     transform: translate(-50%, -50%); 
     background: #333; 
     color: white; 
-    padding: 15px; 
-    border-radius: 8px; 
-    font-size: 13px; 
-}
-
-.info { 
-    background: #f9f9f9; 
     padding: 10px; 
     border-radius: 5px; 
-    font-size: 14px; 
+    font-size: 12px; 
 }
 
-/* NUE indicators box */
+/* KPI items */
 .kpi { 
     display: flex; 
     justify-content: space-between; 
-    padding: 10px; 
-    background: #f9f9f9; 
-    margin-bottom: 8px; 
+    padding: 8px; /* MODIFIED */
+    background: #f9f9f5; 
     border-radius: 5px; 
+    font-size: 13px; /* MODIFIED */
 }
-
-.kpi.highlight { 
-    background: #d1fae5; 
-    border: 2px solid #10b981; 
-    font-weight: bold; 
-}
-
 .kpi span { 
     font-weight: bold; 
 }
 
-/* flowchart grid styling */
+/* Sliders */
+.slider-group {
+    display: grid;
+    grid-template-columns: 110px 1fr; /* MODIFIED */
+    align-items: center;
+    gap: 10px;
+}
+.slider-group label { 
+    font-size: 13px; 
+    color: #4b5563; 
+} 
+.slider-group input[type="range"] {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 100%; 
+    height: 6px; 
+    background: #d1d5db; /* MODIFIED */
+    border-radius: 5px; 
+    outline: none;
+}
+.slider-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 16px; 
+    height: 16px; 
+    background: #3b82f6; /* MODIFIED */
+    border-radius: 50%; 
+    cursor: pointer;
+}
+.slider-group input[type="range"]::-moz-range-thumb {
+    width: 16px; 
+    height: 16px; 
+    background: #3b82f6; /* MODIFIED */
+    border-radius: 50%; 
+    cursor: pointer;
+}
+
+/* Bar/Line Graphs */
+.bar {
+    flex: 1;
+    background: #d1d5db;
+    border-radius: 3px 3px 0 0; /* MODIFIED */
+}
+.dot {
+    position: absolute; 
+    width: 8px; 
+    height: 8px; /* MODIFIED */
+    background: #3b82f6; 
+    border-radius: 50%;
+}
+.label {
+    position: absolute; 
+    bottom: 8px; 
+    right: 10px; /* MODIFIED */
+    font-size: 11px; 
+    font-weight: bold; /* MODIFIED */
+}
+
+/* Nitrogen Flow */
 .flow { 
     display: flex; 
     align-items: center; 
     justify-content: center; 
     gap: 8px; 
-    padding: 8px 0; 
 }
-
 .flow-item { 
-    padding: 12px 15px; 
-    border: 2px solid; 
-    border-radius: 10px; 
-    text-align: center; 
-    font-size: 12px; 
+    padding: 10px 12px; 
+    border: 2px solid; /* MODIFIED */
+    border-radius: 8px; 
+    text-align: center; /* MODIFIED */
+    font-size: 11px; /* MODIFIED */
 }
 
-/* animal metrics stlying to fit next the pathway grid */
-.flow-filter-wrapper{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 15px;
-    align-items: start;
-}
-
-.flow-filter-wrapper > .box {
-    margin-bottom: 0;
-}
-
-.flow-content-wrapper {
-    height: 200px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    gap: 20px;
-}
-
-.filters-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-/* animal metrics section */
-.form-grid{
-    display: grid;
-    gap: 20px;
-}
-
-/* input styling */
-.input-group{
-    margin: 0;
-}
-/* input headings */
-.input-group label{
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #4b5563;
-    margin-bottom: 6px;
-}
-/* select options, type */
-.input-group input, .input-group select{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background: #f9f9f9;
-    font-size: 14px;
-    color: #333;
-}
-
-.input-group input::placeholder {
-    color: #9ca3af;
-}
-
-/* flowchart boxes coloring */
+.arrow { 
+    font-size: 18px;  /* MODIFIED */
+    color: #999; 
+} 
 .yellow { background: #fef3c7; border-color: #fbbf24; }
 .orange { background: #fed7aa; border-color: #fb923c; }
 .green { background: #d1fae5; border-color: #34d399; }
 .blue { background: #dbeafe; border-color: #60a5fa; }
 
-/* flowchart arrows - inaccurate at the moment */
-.arrow { 
-    font-size: 20px; 
-    color: #999; 
-}
-
-/* bar and line graphs placeholder */
-.charts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-/* bar graph */
-.chart { 
-    background: #f9f9f9; 
-    height: 160px; 
-    border-radius: 8px; 
-    display: flex;
-    align-items: flex-end;
-    gap: 10px;
-    padding: 15px;
-    position: relative;
-
-}
-
-/* bars styling */
-.bar {
-    flex: 1;
-    background: #d1d5db;
-    border-radius: 4px 4px 0 0;
-}
-
-/* line graph */
-.scatter {
-    background: #f9f9f9;
-    height: 180px;
-    border-radius: 8px;
-    position: relative;
-}
-
-.dot {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #3b82f6;
-    border-radius: 50%;
-}
-
-/* line graph F^2 and RMSE styling */
-.label {
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.practice-sliders {
-    display: grid;
-    gap: 15px;
-    padding-top: 10px;
-}
-.slider-group {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    align-items: center;
-    gap: 10px;
-}
-
-.slider-group label {
-    font-size: 14px;
+/* Animal Metrics */
+.input-group label{
+    display: block; 
+    font-size: 13px; /* MODIFIED */
+    font-weight: 600; 
     color: #4b5563;
+    margin-bottom: 5px; 
 }
-
-.slider-group input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 8px;
-    background: #d1d5db;
-    border-radius: 5px;
-    outline: none;
+.input-group input{
+    width: 100%; 
+    padding: 8px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    background: #f9f9f5;
+    font-size: 13px; 
+    color: #333; 
 }
-
-.slider-group input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    background: #3b82f6;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.slider-group input[type="range"]::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
-    background: #3b82f6;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.chatbot-box .chatbot-content {
-    height: 85px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 10px;
-    padding-top: 4px; 
-}
-
-.chatbot-content p {
-    font-size: 18px;
-    color: #666;
-    margin: 0;
-}
-
-.chatbot-content input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background: #f9f9f9;
-    font-size: 14px;
-    color: #333;
-}
-
 .sim-image{
-    width: 70%;
-    height:100%;
+    width: 100%; 
+    height: auto; 
     border-radius: 7px;
     margin-top: 8px;
+}
+
+/* AI Assistant */
+.chatbot-content{
+    margin-top: -25px;
+    margin-bottom: 20px;
+}
+.chatbot-content p { 
+    font-size: 15px; 
+    color: #666; 
+    margin: 0; 
+} 
+.chatbot-content input[type="text"] {
+    width: 100%; 
+    padding: 8px; 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    background: #f9f9f5;
+    font-size: 13px; 
+    color: #333; 
 }
