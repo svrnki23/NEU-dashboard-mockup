@@ -73,9 +73,10 @@ h2 {
 
 .box { 
     background: white; 
-    padding: 19px; /* Less padding */
+    padding: 14px; /* Less padding */
     border-radius: 8px; /* Smaller radius */
     box-shadow: 0 2px 4px rgba(0,0,0,0.06); 
+    margin-bottom: -1px;
 }
 
 /* --- Standardized Content Heights --- */
@@ -88,6 +89,7 @@ h2 {
     height: 145px; /* Reduced standard height */
     display: flex;
     flex-direction: column;
+    margin-bottom: -2px;
 }
 
 /* --- Specific Box Styling --- */
@@ -233,6 +235,7 @@ h2 {
     align-items: center; 
     justify-content: center; 
     gap: 8px; 
+    margin-bottom: 16px;
 }
 .flow-item { 
     padding: 10px 12px; 
@@ -269,16 +272,17 @@ h2 {
     color: #333; 
 }
 .sim-image{
-    width: 100%; 
-    height: auto; 
+    width: 75%; 
+    height: 255px; 
+    object-fit: contain;
     border-radius: 7px;
-    margin-top: 8px;
+    margin-top: -4px;
 }
 
 /* AI Assistant */
 .chatbot-content{
-    margin-top: -25px;
-    margin-bottom: 20px;
+    margin-top: -15px;
+    margin-bottom: 5px;
 }
 .chatbot-content p { 
     font-size: 15px; 

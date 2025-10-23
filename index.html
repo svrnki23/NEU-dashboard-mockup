@@ -12,7 +12,7 @@
 
     <div class="filters">
         <select><option>Beef Center, College Station</option></select>
-        <select><option>May 2024</option></select>
+        <select><option>December 2026</option></select>
         <select><option>Semi-Arid</option></select>
         <select>
             <option> --Select Model-- </option>
@@ -25,25 +25,6 @@
     <!-- Column 1 -->
     <div class="main-grid">
         <div class="column">
-            <div class="box">
-                <!-- Line graph -->
-                <h2>Model Verification Module</h2>
-                <p class="box-subtitle">Geospatial vs. Modeled NUE</p>
-                <div class="scatter">
-                    <div class="dot" style="top:30%;left:25%"></div>
-                    <div class="dot" style="top:50%;left:35%"></div>
-                    <div class="dot" style="top:45%;left:45%"></div>
-                    <div class="dot" style="top:40%;left:55%"></div>
-                    <div class="dot" style="top:30%;left:65%"></div>
-                    <div class="dot" style="top:25%;left:75%"></div>
-                    <div class="dot" style="top:20%;left:85%"></div>
-                    <svg style="position:absolute;width:100%;height:100%">
-                        <line x1="10%" y1="85%" x2="90%" y2="15%" stroke="#3b82f6" stroke-width="2"/>
-                    </svg>
-                    <span class="label">F² = 0.92<br>RMSE 1.9%</span>
-                </div>
-            </div>
-
             <div class="box">
                 <!-- Heatmap -->
                 <h2>NUE Heatmap</h2>
@@ -61,6 +42,7 @@
 
             <div class="box">
                 <h2>Precision Animal Management</h2>
+                <img src="sim-placeholder.png" alt="Cattle growth simulation" class="sim-image">
                 <div class="form-grid">
                     <div class="input-group">
                     <label for="num-animals">Number of Animals</label>
@@ -71,7 +53,6 @@
                         <input type="text" id="avgDMI" placeholder="10">
                     </div>
                 </div>
-                <!-- <img src="sim-placeholder.png" alt="Cattle growth simulation" class="sim-image"> -->
             </div>
         </div>
 
@@ -119,7 +100,6 @@
                         <div class="flow-item green">N in Excretion<br>130 g N/head/day</div>
                     </div>
                     <div class="flow" style="margin-top:15px">
-                        <div class="flow-item blue">N in Excretion<br>130 g N/head/day</div>
                         <div style="text-align:center; font-size:12px"><b>N Loss</b><br>NH₃ 10.0, Leaching</div>
                     </div>
                 </div>
@@ -129,6 +109,25 @@
         <!-- COLUMN 3 -->
         <div class="column">
             <!-- Changed name to future scenario testing -->
+            <div class="box">
+                <!-- Line graph -->
+                <h2>Model Verification Module</h2>
+                <p class="box-subtitle">Geospatial vs. Modeled NUE</p>
+                <div class="scatter">
+                    <div class="dot" style="top:30%;left:25%"></div>
+                    <div class="dot" style="top:50%;left:35%"></div>
+                    <div class="dot" style="top:45%;left:45%"></div>
+                    <div class="dot" style="top:40%;left:55%"></div>
+                    <div class="dot" style="top:30%;left:65%"></div>
+                    <div class="dot" style="top:25%;left:75%"></div>
+                    <div class="dot" style="top:20%;left:85%"></div>
+                    <svg style="position:absolute;width:100%;height:100%">
+                        <line x1="10%" y1="85%" x2="90%" y2="15%" stroke="#3b82f6" stroke-width="2"/>
+                    </svg>
+                    <span class="label">F² = 0.92<br>RMSE 1.9%</span>
+                </div>
+            </div>
+
             <div class="box">
                 <h2>Future Scenario Testing</h2>
                 <div class="practice-sliders">
