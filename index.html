@@ -41,8 +41,8 @@
             </div>
 
             <div class="box">
-                <h2>Precision Animal Management</h2>
-                <img src="sim-placeholder.png" alt="Cattle growth simulation" class="sim-image">
+                <h2>Precision Livestock Monitoring</h2>
+                <img src="sim-placeholder2.jpeg" alt="Cattle growth simulation" class="sim-image">
                 <div class="form-grid">
                     <div class="input-group">
                     <label for="num-animals">Number of Animals</label>
@@ -130,20 +130,32 @@
 
             <div class="box">
                 <h2>Future Scenario Testing</h2>
-                <div class="practice-sliders">
-                    <!-- need to name number to sliders, just a slider at the moment -->
-                    <div class="slider-group">
-                        <label for="legume">Legume Integration</label>
-                        <input type="range" id="legume" min="0" max="100" value="60">
+                <div class="scenario-toggles">
+                    
+                    <div class="toggle-group">
+                        <span>Legume Integration</span>
+                        <label class="switch">
+                            <input type="checkbox" id="legume" checked>
+                            <span class="slider"></span>
+                        </label>
                     </div>
-                    <div class="slider-group">
-                        <label for="grazing">Rotational Grazing</label>
-                        <input type="range" id="grazing" min="0" max="100" value="50">
+                
+                    <div class="toggle-group">
+                        <span>Rotational Grazing</span>
+                        <label class="switch">
+                            <input type="checkbox" id="grazing" checked>
+                            <span class="slider"></span>
+                        </label>
                     </div>
-                    <div class="slider-group">
-                        <label for="additives">Additives</label>
-                        <input type="range" id="additives" min="0" max="100" value="30">
+            
+                    <div class="toggle-group">
+                        <span>Additives</span>
+                        <label class="switch">
+                            <input type="checkbox" id="additives">
+                            <span class="slider"></span>
+                        </label>
                     </div>
+
                 </div>
             </div>
 
